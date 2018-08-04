@@ -66,7 +66,8 @@ const styles = StyleSheet.create({
   },
   errorBox: {
     backgroundColor: Color(colors.danger).lighten(0.4),
-    flex: 1,
+    height: 30,
+    width: (metrics.screenWidth - 80),
     alignItems: 'center',
     justifyContent: 'center',
     marginVertical: metrics.baseMargin,

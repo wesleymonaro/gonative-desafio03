@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  View, Text, TextInput, TouchableOpacity,
+  View, Text, TextInput, TouchableOpacity, ActivityIndicator,
 } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -14,6 +14,7 @@ class Modal extends Component {
     closeModalRequest: PropTypes.func.isRequired,
     addUserRequest: PropTypes.func.isRequired,
     errorOnAdd: PropTypes.string,
+    loading: PropTypes.bool.isRequired,
   }
 
   static defaultProps = {
@@ -35,7 +36,7 @@ class Modal extends Component {
   }
 
   render() {
-    const { closeModalRequest, errorOnAdd } = this.props;
+    const { closeModalRequest, errorOnAdd, loading } = this.props;
     const { username } = this.state;
 
 
@@ -79,9 +80,15 @@ class Modal extends Component {
               style={styles.saveButton}
               onPress={this.addUser}
             >
-              <Text style={styles.buttonText}>
-                Salvar
-              </Text>
+              {
+                loading
+                  ? <ActivityIndicator size="small" color="white" />
+                  : (
+                    <Text style={styles.buttonText}>
+                      Salvar
+                    </Text>
+                  )
+              }
             </TouchableOpacity>
 
 
