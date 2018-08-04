@@ -13,7 +13,7 @@
     "clear-errors": "rm ./node_modules/react-native/local-cli/core/__fixtures__/files/package.json"
   },
   "dependencies": {
-    "@mapbox/react-native-mapbox-gl": "^6.1.2-beta2",
+    "@mapbox/react-native-mapbox-gl": "^6.1.1",
     "axios": "^0.18.0",
     "color": "^3.0.0",
     "prop-types": "^15.6.2",
